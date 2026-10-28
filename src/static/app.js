@@ -151,12 +151,15 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
-        if (!addParticipantToCard(activity, email)) {
-          await fetchActivities();
-        }
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
+      }
+
+      if (response.ok && !addParticipantToCard(activity, email)) {
+        await fetchActivities();
+      } else if (!response.ok) {
+        await fetchActivities();
       }
 
       messageDiv.classList.remove("hidden");
