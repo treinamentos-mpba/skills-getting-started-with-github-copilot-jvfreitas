@@ -33,6 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         const participantsList = activityCard.querySelector(".participants ul");
+        if (details.participants.length === 0) {
+          const emptyItem = document.createElement("li");
+          emptyItem.className = "empty-participants";
+          emptyItem.textContent = "Ainda não há participantes inscritos.";
+          participantsList.appendChild(emptyItem);
+        }
+
         details.participants.forEach((participant) => {
           const participantItem = document.createElement("li");
           participantItem.className = "participant-item";

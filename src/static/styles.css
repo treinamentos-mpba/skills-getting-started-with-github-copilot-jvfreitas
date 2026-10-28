@@ -76,8 +76,10 @@ section h3 {
 
 .participants {
   margin-top: 14px;
-  padding-top: 12px;
+  padding: 12px;
   border-top: 1px solid #dfe4ec;
+  border-radius: 4px;
+  background-color: #f0f5f8;
 }
 
 .participants h5 {
@@ -98,20 +100,23 @@ section h3 {
 }
 
 .participant-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  min-width: 0;
+  position: relative;
+  padding-right: 42px;
 }
 
 .participant-item + .participant-item {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .participant-item span {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+.empty-participants {
+  color: #667085;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .form-group {
@@ -150,7 +155,9 @@ button:hover {
 
 .remove-participant {
   display: grid;
-  flex: 0 0 32px;
+  position: absolute;
+  top: 50%;
+  right: 0;
   width: 32px;
   height: 32px;
   place-items: center;
@@ -159,6 +166,7 @@ button:hover {
   border-radius: 4px;
   background-color: #fff7f7;
   color: #b42318;
+  transform: translateY(-50%);
 }
 
 .remove-participant:hover {
