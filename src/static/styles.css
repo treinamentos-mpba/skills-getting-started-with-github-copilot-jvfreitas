@@ -94,8 +94,8 @@ section h3 {
 }
 
 .participants ul {
-  list-style: disc;
-  padding-left: 20px;
+  list-style: none;
+  padding-left: 0;
   color: #475467;
 }
 
@@ -118,8 +118,6 @@ section h3 {
 }
 
 .empty-participants {
-  list-style: none;
-  margin-left: -20px;
   color: #667085;
   font-size: 14px;
   font-style: italic;

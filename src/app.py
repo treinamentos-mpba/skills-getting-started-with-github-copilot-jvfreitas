@@ -39,7 +39,6 @@ activities = {
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
     },
-<<<<<<< HEAD
     "Soccer Team": {
         "description": "Train and compete in inter-school soccer matches",
         "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
@@ -75,7 +74,7 @@ activities = {
         "schedule": "Fridays, 3:30 PM - 4:30 PM",
         "max_participants": 20,
         "participants": ["harper@mergington.edu", "benjamin@mergington.edu"]
-=======
+    },
     "Basketball Team": {
         "description": "Practice basketball skills and compete in school games",
         "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
@@ -94,12 +93,6 @@ activities = {
         "max_participants": 15,
         "participants": []
     },
-    "Drama Club": {
-        "description": "Develop acting skills and produce school performances",
-        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
-        "max_participants": 20,
-        "participants": []
-    },
     "Science Club": {
         "description": "Explore scientific topics through experiments and projects",
         "schedule": "Mondays, 3:30 PM - 4:30 PM",
@@ -111,7 +104,6 @@ activities = {
         "schedule": "Fridays, 3:30 PM - 4:30 PM",
         "max_participants": 12,
         "participants": []
->>>>>>> 4d5a12e (Adiciona novas atividades extracurriculares e validação para inscrições duplicadas)
     }
 }
 
@@ -136,18 +128,10 @@ def signup_for_activity(activity_name: str, email: str):
     # Get the specific activity
     activity = activities[activity_name]
 
-<<<<<<< HEAD
     # Validate student is not already signed up
     if email in activity["participants"]:
         raise HTTPException(status_code=400, detail="Student already signed up for this activity")
-    
-=======
-  # Validate student is not already signed up
-    if email in activity["participants"]:
-        raise HTTPException(status_code=400, detail="Student already signed up for this activity")
 
-
->>>>>>> 4d5a12e (Adiciona novas atividades extracurriculares e validação para inscrições duplicadas)
     # Add student
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
